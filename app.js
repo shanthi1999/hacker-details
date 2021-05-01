@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
+const cors = require('cors');
+
 const hackerRoutes = require('./routes/hackersRoutes');
 
 const mongoose = require("mongoose");
@@ -17,6 +19,8 @@ const connectMongoDb = mongoose.connection
 connectMongoDb.on('open',()=>{
     console.log("DB connected....")
 })
+
+app.use(cors());
 
 app.use(express.json()) 
 
