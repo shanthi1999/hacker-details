@@ -9,7 +9,7 @@ const mongoDBConnectString = 'mongodb+srv://hackerDetails:hackerDetails@cluster0
 
 // const mongoDBConnectString = 'mongodb://localhost:27017/';
 
-const port = process.envv.PORT || 9000
+const port = process.env.PORT || 9000
 
 mongoose.connect(mongoDBConnectString,{useUnifiedTopology:true,useFindAndModify:false, useNewUrlParser:true})
 const connectMongoDb = mongoose.connection
