@@ -9,6 +9,8 @@ const mongoDBConnectString = 'mongodb+srv://hackerDetails:hackerDetails@cluster0
 
 // const mongoDBConnectString = 'mongodb://localhost:27017/';
 
+const port = process.envv.PORT || 9000
+
 mongoose.connect(mongoDBConnectString,{useUnifiedTopology:true,useFindAndModify:false, useNewUrlParser:true})
 const connectMongoDb = mongoose.connection
 
@@ -20,6 +22,6 @@ app.use(express.json())
 
 app.use('/hackers',hackerRoutes)
 
-app.listen(9000,()=>{
+app.listen(port,()=>{
     console.log("port connected...")
 })
