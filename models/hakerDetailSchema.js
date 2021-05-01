@@ -7,7 +7,7 @@ const hackerSchema = new mongoose.Schema({
     },
     Age:{
         type:Number,
-        requires:true
+        required:true
     },
     Qualification:{
         type:String,
